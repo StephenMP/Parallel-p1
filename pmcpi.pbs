@@ -1,0 +1,94 @@
+#!/bin/sh
+#PBS -l nodes=8:node
+#PBS -m e
+
+# This is a PBS job submission script. The second line asks to reserve 1 node.
+# The third line asks to email you when your job finishes. The fourth line
+# asks to run your job after 5pm in the evening.
+# 
+# IMPORTANT NOTE:  Be sure to modify the "cd" command below to switch
+# to the directory in which you are currently working! 
+#------------------------------------------------------------------------
+
+
+#cd $HOME/cs430/projects/monte-carlo/
+cd /home/students/sporter/cs430/projects/monte-carlo/
+
+echo > pmcpi.log
+
+#------------------------------------------------------------------------
+# mpiexec -l -n 2 pmcpi x 1234 10000
+#------------------------------------------------------------------------
+echo "Running for 1000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 2 pmcpi 1000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 2000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 2 pmcpi 2000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 4000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 2 pmcpi 4000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 8000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 2 pmcpi 8000000000 1234 10000 >> pmcpi.log
+
+#------------------------------------------------------------------------
+# mpiexec -l -n 4 pmcpi x 1234 10000
+#------------------------------------------------------------------------
+echo "Running for 1000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 4 pmcpi 1000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 2000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 4 pmcpi 2000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 4000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 4 pmcpi 4000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 8000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 4 pmcpi 8000000000 1234 10000 >> pmcpi.log
+
+#------------------------------------------------------------------------
+# mpiexec -l -n 8 pmcpi x 1234 10000
+#------------------------------------------------------------------------
+echo "Running for 1000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 8 pmcpi 1000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 2000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 8 pmcpi 2000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 4000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 8 pmcpi 4000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 8000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 8 pmcpi 8000000000 1234 10000 >> pmcpi.log
+
+#------------------------------------------------------------------------
+# mpiexec -l -n 16 pmcpi x 1234 10000
+#------------------------------------------------------------------------
+echo "Running for 1000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 16 pmcpi 1000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 2000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 16 pmcpi 2000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 4000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 16 pmcpi 4000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 8000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 16 pmcpi 8000000000 1234 10000 >> pmcpi.log
+
+#------------------------------------------------------------------------
+# mpiexec -l -n 32 pmcpi x 1234 10000
+#------------------------------------------------------------------------
+echo "Running for 1000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 32 pmcpi 1000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 2000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 32 pmcpi 2000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 4000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 32 pmcpi 4000000000 1234 10000 >> pmcpi.log
+
+echo "Running for 8000000000 with seed 1234" >> pmcpi.log
+mpiexec -l -n 32 pmcpi 8000000000 1234 10000 >> pmcpi.log
+
+
