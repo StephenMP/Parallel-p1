@@ -84,6 +84,7 @@ int main(int argc, char **argv)
 		interval = atoi(argv[3]);
 		signal(SIGALRM, print_state);
 		alarm(interval);
+		printf("0%%\r");
 	}
 
   	/* Start up MPI */
@@ -120,13 +121,13 @@ int main(int argc, char **argv)
 		
 		/* Pretty printing stuff */
 		if(interval > 0 && interval < 1000){
-			printf("[");
+			//printf("[");
 
-			for(i=0; i<BAR_WIDTH-1; i++){
-				printf("=");
-			}
+			//for(i=0; i<BAR_WIDTH-1; i++){
+			//	printf("=");
+			//}
 			
-			printf("] 100.0%%\n");
+			printf("100.0%%\n");
 		}
 		
 		/* The results from all our hard work */
@@ -148,20 +149,20 @@ int main(int argc, char **argv)
 void print_state(int signo)
 {
 	/* Initial data */
-	int curr;
+	//int curr;
 	double progress = (double)count/share;
-	int pos = BAR_WIDTH * progress;
+	//int pos = BAR_WIDTH * progress;
 	
 	/* Only print the status if we are p0 to avoid multiple prints */
 	if(id == 0){
-		printf("[");
+		//printf("[");
 	
-		for(curr=0; curr<BAR_WIDTH-1; curr++){
-			if(curr <= pos) printf("=");
-			else printf(" ");
-		}
+		//for(curr=0; curr<BAR_WIDTH-1; curr++){
+		//	if(curr <= pos) printf("=");
+		//	else printf(" ");
+		//}
 		
-		printf("] %04.1lf%%\r", progress*100);
+		printf("%04.1lf%%\r", progress*100);
 		fflush(NULL);
 		alarm(interval);
 	}
