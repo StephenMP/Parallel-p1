@@ -130,7 +130,7 @@ int main(int argc, char **argv)
 		}
 		
 		/* The results from all our hard work */
-		printf(" Pi  = %f\nTime = %lfs\n", pi, totalTime);
+		printf(" Pi  = %f \nTime = %lfs\n", pi, totalTime);
 	}
 
   	/* Program finished. Exit MPI */
