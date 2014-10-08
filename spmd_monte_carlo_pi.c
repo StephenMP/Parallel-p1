@@ -120,15 +120,15 @@ int main(int argc, char **argv)
 		totalTime = MPI_Wtime() - startTime;
 		
 		/* Pretty printing stuff */
-		if(interval > 0 && interval < 1000){
+		//if(interval > 0 && interval < 1000){
 			//printf("[");
 
 			//for(i=0; i<BAR_WIDTH-1; i++){
 			//	printf("=");
 			//}
 			
-			printf("100.0%%\n");
-		}
+			//printf("100.0%%\n");
+		//}
 		
 		/* The results from all our hard work */
 		printf(" Pi  = %f\nTime = %lfs\n", pi, totalTime);
